@@ -53,7 +53,7 @@ public class PerChart extends View {
     private int chartSize;                      //图表大小
     private int chartRaidusInner;                      //圈半径
     private int raidusSize = DensityUtil.dip2px(getContext(), 25);  //进度宽度
-    private int outSpace = DensityUtil.dip2px(getContext(), 10);          //图表与边界距离
+    private int outSpace;          //图表与边界距离
     private int lineLenth = DensityUtil.dip2px(getContext(), 25);
     private int picSize ;//图片大小
     private int picRaidus;   //包裹图片的圆圈半径
@@ -224,6 +224,9 @@ public class PerChart extends View {
         //图片半径
         picRaidus = (int)(picSize*Math.sin(45));
         chartSize = chartSize/2;
+        //外侧间距应该至少等容纳一行字
+        paintLabel.setTextSize(textSize);
+        outSpace =(int)(FontUtil.getFontHeight(paintLabel)+10);
         chartRaidusInner = chartSize - outSpace - picRaidus*2 - lineLenth - raidusSize;
         setMeasuredDimension(width, height);
         LogUtil.i(TAG, "图表总宽高="+width+"*"+height

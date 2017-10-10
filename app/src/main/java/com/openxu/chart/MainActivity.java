@@ -24,13 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         countList = new ArrayList<>();
         countList.add(new Bean("50", "消费购物",Color.parseColor("#78a543"), R.mipmap.value_shop_select));
-        countList.add(new Bean("70", "好友推广",Color.parseColor("#359dc8"), R.mipmap.value_share_select));
-        countList.add(new Bean("40", "签到奖励",Color.parseColor("#f25c5c"), R.mipmap.value_sign_normal));
-        countList.add(new Bean("50", "消费购物",Color.parseColor("#78a543"), R.mipmap.value_shop_select));
-        countList.add(new Bean("40", "签到奖励",Color.parseColor("#f25c5c"), R.mipmap.value_sign_normal));
-        countList.add(new Bean("70", "好友推广",Color.parseColor("#359dc8"), R.mipmap.value_share_select));
         /*设置控件*/
-        perChart.setDebug(false);
+        perChart.setDebug(true);
         /*请求到数据后，需要设置数据，并设置loading为false*/
         perChart.setLoading(false);
         perChart.setData(Bean.class, "count", "name", "color", "bitmapID", countList);
