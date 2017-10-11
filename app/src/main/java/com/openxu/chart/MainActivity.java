@@ -24,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
         countList = new ArrayList<>();
         countList.add(new Bean("50", "消费购物",Color.parseColor("#78a543"), R.mipmap.value_shop_select));
+        countList.add(new Bean("50", "消费购物",Color.parseColor("#7a1543"), R.mipmap.value_sign_normal));
+        countList.add(new Bean("50", "消费购物",Color.parseColor("#78aaa3"), R.mipmap.value_share_select));
+        countList.add(new Bean("50", "消费购物",Color.parseColor("#1f3543"), R.mipmap.value_shop_select));
+        countList.add(new Bean("50", "消费购物",Color.parseColor("#123123"), R.mipmap.value_sign_normal));
+        countList.add(new Bean("50", "消费购物",Color.parseColor("#7abc33"), R.mipmap.value_share_select));
+        countList.add(new Bean("50", "消费购物",Color.parseColor("#1b4593"), R.mipmap.value_sign_normal));
         /*设置控件*/
         perChart.setDebug(true);
         /*请求到数据后，需要设置数据，并设置loading为false*/
