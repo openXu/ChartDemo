@@ -503,15 +503,23 @@ public class PerChart extends View {
         paintArc.setStyle(Paint.Style.FILL);//设置实心
         canvas.drawCircle(centerPoint.x, centerPoint.y, chartRaidusInner, paintArc);
         /*中间的文字*/
+        float allHeight = 0;
+        paintLabel.setTextSize(textSizeBig);
+        allHeight += FontUtil.getFontHeight(paintLabel);
+        paintLabel.setTextSize(textSize);
+        allHeight += FontUtil.getFontHeight(paintLabel);;
+
         paintLabel.setColor(Color.BLACK);
         paintLabel.setTextSize(textSizeBig);
         float textW = FontUtil.getFontlength(paintLabel, total+"");
-        float totalH = FontUtil.getFontHeight(paintLabel);
-        canvas.drawText(total+"", centerPoint.x-textW/2, centerPoint.y-totalH/2+FontUtil.getFontLeading(paintLabel), paintLabel);
+        float textH = FontUtil.getFontHeight(paintLabel);
+        canvas.drawText(total+"", centerPoint.x-textW/2, centerPoint.y-allHeight/2+FontUtil.getFontLeading(paintLabel), paintLabel);
         paintLabel.setColor(textColor);
         paintLabel.setTextSize(textSize);
+        textH = FontUtil.getFontHeight(paintLabel);
         textW = FontUtil.getFontlength(paintLabel, "总计");
-        canvas.drawText("总计", centerPoint.x-textW/2, centerPoint.y+totalH/2+FontUtil.getFontLeading(paintLabel), paintLabel);
+        canvas.drawText("总计", centerPoint.x-textW/2,
+                centerPoint.y+DensityUtil.dip2px(getContext(), 5)+FontUtil.getFontLeading(paintLabel), paintLabel);
     }
 
 
